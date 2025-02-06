@@ -1,4 +1,3 @@
-import 'package:ecommerce_admin_apps/admin_home.dart';
 import 'package:ecommerce_admin_apps/firebase_options.dart';
 import 'package:ecommerce_admin_apps/views/login.dart';
 import 'package:firebase_core/firebase_core.dart';
