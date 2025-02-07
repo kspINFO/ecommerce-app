@@ -13,10 +13,10 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       return e.message.toString();
     }
-
+  }
     // login with email password method
 
-    // ignore: dead_code
+    
     Future<String> loginWithEmail(String email, String password) async {
       try {
         await FirebaseAuth.instance
@@ -45,4 +45,4 @@ class AuthService {
       return user != null;
     }
   }
-}
+

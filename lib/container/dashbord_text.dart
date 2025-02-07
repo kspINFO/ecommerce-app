@@ -26,7 +26,7 @@ class _DashbordTextState extends State<DashbordText> {
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
-        )
+        ),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:ecommerce_admin_apps/firebase_options.dart';
 import 'package:ecommerce_admin_apps/views/login.dart';
+import 'package:ecommerce_admin_apps/views/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         "/Loginpage": (context) => LoginPage(),
+        "/signup": (context) => SignupPage(),
       },
     );
   }
