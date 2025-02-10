@@ -1,10 +1,13 @@
 import 'package:ecommerce_admin_apps/admin_home.dart';
 import 'package:ecommerce_admin_apps/controllers/auth_service.dart';
 import 'package:ecommerce_admin_apps/firebase_options.dart';
+import 'package:ecommerce_admin_apps/providers/admin_provider.dart';
+import 'package:ecommerce_admin_apps/views/categories_page.dart';
 import 'package:ecommerce_admin_apps/views/login.dart';
 import 'package:ecommerce_admin_apps/views/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,19 +23,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => AdminProvider(),
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Ecommerce app',
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true),
+        routes: {
+          "/": (context) => ChickUser(),
+          "/loginpage": (context) => LoginPage(),
+          "/signup": (context) => SignupPage(),
+          "/home": (context) => AdminHome(),
+          "/categories": (context) => CategoriesPage(),
+        },
       ),
-      routes: {
-        "/": (context) => ChickUser(),
-        "/loginpage": (context) => LoginPage(),
-        "/signup": (context) => SignupPage(),
-        "/home": (context) => AdminHome(),
-      },
     );
   }
 }
